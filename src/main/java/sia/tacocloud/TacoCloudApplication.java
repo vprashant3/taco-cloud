@@ -1,5 +1,6 @@
 package sia.tacocloud;
 
+import com.algorithms.PeakFinder;
 import com.datastructures.DynamicArray;
 
 import org.springframework.boot.SpringApplication;
@@ -14,11 +15,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class TacoCloudApplication<T> {
 
     public static void main(String[] args) {
-        SpringApplication.run(TacoCloudApplication.class, args);
+        //SpringApplication.run(TacoCloudApplication.class, args);
 
-        DynamicArray<String> dynamicArray = new DynamicArray<>();
-        dynamicArray.add("hi");
 
+        int[] input = {1,2,3,4,5};
+
+        int peaks = PeakFinder.findPeaks(input);
+
+        System.out.println(peaks);
 
 
     }
