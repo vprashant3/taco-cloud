@@ -21,18 +21,18 @@ public class Stack<T> implements Iterable<T> {
     }
 
     public void push(T elem) {
-        linkedList.add(elem);
+        linkedList.addLast(elem);
 
     }
 
     public T pop() {
         if(isEmpty()) throw new EmptyStackException();
-        return linkedList.pop();
+        return linkedList.removeLast();
     }
 
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return linkedList.iterator();
     }
 }
