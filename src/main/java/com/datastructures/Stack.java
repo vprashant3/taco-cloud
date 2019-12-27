@@ -6,6 +6,7 @@ import java.util.LinkedList;
 
 public class Stack<T> implements Iterable<T> {
 
+    int i;
     private LinkedList<T> linkedList = new LinkedList<>();
 
     public Stack() {}
