@@ -1,4 +1,4 @@
-package com.codechef;
+package com.codechef.DEC2019;
 
 import java.util.Scanner;
 import java.util.stream.IntStream;
