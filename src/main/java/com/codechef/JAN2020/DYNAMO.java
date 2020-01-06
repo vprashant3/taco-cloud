@@ -11,16 +11,16 @@ public class DYNAMO {
             int T = sc.nextInt();
 
             for (int i = 0; i < T; i++) {
-                int N = sc.nextInt();
-                int A = sc.nextInt();
-                int Max = (int) Math.pow(10,N);
-                int S = (2*Max)+A;
+                long N = sc.nextLong();
+                long A = sc.nextLong();
+                long Max = (long) Math.pow(10,N);
+                long S = (2*Max)+A;
                 System.out.println(S);
-                int B = sc.nextInt();
-                int C = Max - B;
+                long B = sc.nextLong();
+                long C = Max - B;
                 System.out.println(C);
-                int D = sc.nextInt();
-                int E = Max - D;
+                long D = sc.nextLong();
+                long E = Max - D;
                 System.out.println(E);
                 int res = sc.nextInt();
                 if(res == -1) return;
