@@ -11,11 +11,25 @@ public class HeapifyArray {
             heapify(arr,arr.length,i);
         }
 
-
-
-        Arrays.stream(arr).forEach(System.out::println);
+        // to print sorted array
+        remvoeMaxNodeandHeapifyArray(arr);
 
     }
+
+    private static void remvoeMaxNodeandHeapifyArray(int[] arr) {
+        if(arr.length<=1)
+        {
+            System.out.println(arr[0]);
+        } else {
+            int maxValue = arr[0];
+            System.out.println(maxValue);
+            arr[0] = arr[arr.length - 1];
+            arr = Arrays.copyOfRange(arr, 0, arr.length - 1);
+            heapify(arr, arr.length, 0);
+            remvoeMaxNodeandHeapifyArray(arr);
+        }
+    }
+
 
     private static void heapify(int[] arr, int n, int i)
     {
