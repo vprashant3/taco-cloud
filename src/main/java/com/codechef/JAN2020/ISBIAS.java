@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class ISBIAS {
 
+
     public static void main (String[] args) throws java.lang.Exception {
         try {
             Scanner sc = new Scanner(System.in);
