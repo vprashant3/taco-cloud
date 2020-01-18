@@ -5,17 +5,14 @@ import com.google.common.hash.Hashing;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class HashingWithChaining {
-    private HashMap<Integer, ArrayList<String>> hashMap;
+public class HashingWithChaining<T> {
+    private HashMap<Integer, ArrayList<T>> hashMap = new HashMap<>();
     private static int BUCKE_STZE=32;
 
-    public HashingWithChaining() {
-        hashMap = new HashMap<>();
-    }
-    public void add(String s) {
-        ArrayList<String> strings = getArrayList(s);
+    private void add(T s) {
+        ArrayList<T> strings = getArrayList(s);
         if(strings == null){
-            ArrayList<String> newArrayList =  new ArrayList<>();
+            ArrayList<T> newArrayList =  new ArrayList<>();
             newArrayList.add(s);
             hashMap.put(getHash(s),newArrayList);
         } else {
@@ -23,27 +20,41 @@ public class HashingWithChaining {
         }
     }
 
-    public boolean contains(String s) {
-        ArrayList<String> strings = getArrayList(s);
-        return strings.stream().anyMatch(i -> i.equalsIgnoreCase(s));
+    private boolean contains(T s) {
+        ArrayList<T> strings = getArrayList(s);
+        return strings.stream().anyMatch(i -> i == s);
     }
 
 
-    public void remove(String s) {
-        ArrayList<String> strings = getArrayList(s);
+    private void remove(T s) {
+        ArrayList<T> strings = getArrayList(s);
         strings.remove(s);
         hashMap.put(getHash(s),strings);
 
     }
 
-    private ArrayList<String> getArrayList(String s){
+    private ArrayList<T> getArrayList(T s){
         int hash = getHash(s);
         return hashMap.get(hash);
 
     }
 
-    private int getHash(String s) {
+    private int getHash(T s) {
        return Hashing.consistentHash(s.hashCode(), BUCKE_STZE);
+    }
+
+    public static void main(String[] args) {
+        HashingWithChaining<String> hashing = new HashingWithChaining<>();
+        hashing.add("hi");
+        hashing.add("there");
+        hashing.add("hi");
+
+        System.out.println(hashing.contains("hi"));
+        System.out.println(hashing.contains("there"));
+        hashing.remove("hi");
+        System.out.println(hashing.contains("hi"));
+        hashing.remove("hi");
+        System.out.println(hashing.contains("hi"));
     }
 
 
