@@ -15,6 +15,8 @@ public class ShuffleAnArray {
     }
 
 
+
+
     // take a random value from inputArray, assign to outputArray, then remove the random value from inputarray and reduce its size
     // time complexity O(n2)
     private static int[] shuffledArray(int[] inputArray) {
