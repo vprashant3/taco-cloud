@@ -1,14 +1,16 @@
 package com.leetcode.AprilChallenge;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Day2 {
 
     public static void main(String[] args) {
-
-        System.out.println(isHappy(19));
-//        System.out.println(sumOfIntegers(19));
+        String[] input =  {"duh","ill","tan","ate","nat","bat"};
+        List<List<String>> lists = groupAnagrams(input);
 
     }
 
@@ -32,6 +34,30 @@ public class Day2 {
             n =  n/10;
         }
         return sum;
+    }
+
+
+    public static List<List<String>> groupAnagrams(String[] strs) {
+        Map<Integer,List<String>> res =  new HashMap<>();
+        for(String s : strs) {
+            char[] charArray =  s.toCharArray();
+            int hash = 0;
+            for(char ch :  charArray) {
+                hash += (int)ch;
+            }
+            if(res.containsKey(hash)) {
+                List<String> existingList =  res.get(hash);
+                existingList.add(s);
+            } else {
+                List<String> newList =  new ArrayList<>();
+                newList.add(s);
+                res.put(hash,newList);
+            }
+        }
+        Collection<List<String>> values = res.values();
+        List<List<String>> resList =  new ArrayList<>();
+        values.forEach( list -> resList.add(list));
+        return resList;
     }
 
 
