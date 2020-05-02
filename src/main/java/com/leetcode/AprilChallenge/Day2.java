@@ -1,16 +1,19 @@
 package com.leetcode.AprilChallenge;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 
 public class Day2 {
 
     public static void main(String[] args) {
-        String[] input =  {"duh","ill","tan","ate","nat","bat"};
-        List<List<String>> lists = groupAnagrams(input);
+        String input = "]";
+        System.out.println(isValid(input));
 
     }
 
@@ -38,26 +41,44 @@ public class Day2 {
 
 
     public static List<List<String>> groupAnagrams(String[] strs) {
-        Map<Integer,List<String>> res =  new HashMap<>();
+        Map<String,List<String>> tempStore = new HashMap<>();
         for(String s : strs) {
-            char[] charArray =  s.toCharArray();
-            int hash = 0;
-            for(char ch :  charArray) {
-                hash += (int)ch;
-            }
-            if(res.containsKey(hash)) {
-                List<String> existingList =  res.get(hash);
-                existingList.add(s);
+            char[] charArray = s.toCharArray();
+            Arrays.sort(charArray);
+            String sortedString = String.valueOf(charArray);
+            if(tempStore.containsKey(sortedString)) {
+                List<String> list = tempStore.get(sortedString);
+                list.add(s);
             } else {
-                List<String> newList =  new ArrayList<>();
-                newList.add(s);
-                res.put(hash,newList);
+                List<String> list = new ArrayList<>();
+                list.add(s);
+                tempStore.put(sortedString,list);
             }
+
         }
-        Collection<List<String>> values = res.values();
-        List<List<String>> resList =  new ArrayList<>();
-        values.forEach( list -> resList.add(list));
-        return resList;
+        List<List<String>> res =  new ArrayList<>();
+        tempStore.values().forEach(list -> res.add(list));
+        return res;
+    }
+
+
+    public static boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        char[] chars = s.toCharArray();
+        for(char c : chars) {
+            if(c == '(' || c == '{' || c == '[') stack.push(c);
+            else {
+                if(stack.isEmpty()) return false;
+                char pop = stack.pop();
+                if(pop == '(' && c == ')') {}
+                else if(pop == '[' && c == ']') {}
+                else if (pop == '{' && c == '}') {}
+                else return false;
+            }
+
+        }
+        if(stack.empty()) return true;
+        else return false;
     }
 
 

@@ -1,20 +1,29 @@
 package com.leetcode.ListProblems;
 
+import java.util.HashSet;
+import java.util.List;
+
 class Solution {
 
     public static void main(String[] args) {
-        ListNode tail1 = new ListNode(3);
+        ListNode tail1 = null;
         ListNode mid1 = new ListNode(2, tail1);
-        ListNode head1 =  new ListNode(1, mid1);
+        ListNode head1 =  new ListNode(3, mid1);
+        ListNode tail2 = new ListNode(-4,mid1);
+        tail1 = new ListNode(0,tail2);
 
 
-        ListNode tail2 = new ListNode(3);
-        ListNode mid2 = new ListNode(2, tail2);
-        ListNode head2 =  new ListNode(1, mid2);
+
+
+//        ListNode tail2 = new ListNode(3);
+//        ListNode mid2 = new ListNode(2, tail2);
+//        ListNode head2 =  new ListNode(1, mid2);
 
 //        System.out.println(listNode.val);
 
-        ListNode listNode = mergeTwoLists(head1, head2);
+//        ListNode listNode = mergeTwoLists(head1, head2);
+
+        System.out.println(hasCycle(head1));
 
 
     }
@@ -45,7 +54,38 @@ class Solution {
     }
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        return null;
+        ListNode ans = new ListNode(0);
+        ListNode prev = ans;
+
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
+                prev.next = l1;
+                l1 = l1.next;
+            } else {
+                prev.next = l2;
+                l2 = l2.next;
+            }
+            prev = prev.next;
+        }
+        if (l1 == null) {
+            prev.next = l2;
+        }
+        if (l2 == null) {
+            prev.next = l1;
+        }
+
+        return ans.next;
+    }
+
+
+    public static boolean hasCycle(ListNode head) {
+        HashSet<ListNode> seen = new HashSet<>();
+        while(head != null) {
+            if(seen.contains(head)) return true;
+            else seen.add(head);
+            head = head.next;
+        }
+        return false;
     }
 }
 
