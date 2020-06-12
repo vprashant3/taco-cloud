@@ -12,8 +12,9 @@ import java.util.Stack;
 public class Day2 {
 
     public static void main(String[] args) {
-        String input = "]";
-        System.out.println(isValid(input));
+        int input = 5;
+        System.out.println(findComplement(input));
+
 
     }
 
@@ -79,6 +80,12 @@ public class Day2 {
         }
         if(stack.empty()) return true;
         else return false;
+    }
+
+
+    public static int findComplement(int num) {
+        int ones = (Integer.highestOneBit(num) << 1) - 1;
+        return num ^ ones;
     }
 
 
