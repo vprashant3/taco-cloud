@@ -1,14 +1,85 @@
 package com.codeforces.DesignPatterns;
 
+import com.leetcode.Starter.TreeNode;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 import java.util.Stack;
+import java.util.TreeMap;
 
 public class NextGreaterElement {
+    public static Map<Integer,List<Integer>> levelMap = new TreeMap<>();
     public static void main(String[] args) {
-        int[] T = {73, 74, 75, 71, 69, 72, 76, 73};
-        dailyTemperatures(T);
+        int[] T = {1,2,3,4,5,3,2};
+        searchInBitonicArray(T,3, 0, T.length-1);
 
+
+    }
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>>  res =  new ArrayList<>();
+        if(root == null) return res;
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.offer(root);
+
+        while(!queue.isEmpty()) {
+            int level = queue.size();
+            List<Integer> subList = new LinkedList<>();
+            for(int i = 0; i < level; i++) {
+                if(queue.peek().left != null) queue.offer(queue.peek().left);
+                if(queue.peek().right != null) queue.offer(queue.peek().right);
+                subList.add(queue.poll().val);
+            }
+            res.add(subList);
+        }
+        return res;
+    }
+
+    public static boolean searchInBitonicArray(int[] t, int i, int left, int right) {
+        int mid = left + (right-left)/2;
+        if(t[mid] == i) return true;
+        else if( mid-i > left && t[mid-1] > i) {
+           return searchInBitonicArray(t,i, left, mid-1);
+        } else if( mid+i < right && t[mid+1] < i) {
+            return searchInBitonicArray(t,i, left, mid-1);
+        }
+    }
+
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        createLevelMap(root, 1);
+        Set<Map.Entry<Integer, List<Integer>>> values = levelMap.entrySet();
+        List<List<Integer>> result =  new ArrayList<>();
+        for(Map.Entry i : values) {
+            List<Integer> levelValues=  (List<Integer>) i.getValue();
+                result.add(levelValues);
+        }
+        return result;
+
+
+    }
+
+    private void createLevelMap(TreeNode node, int level) {
+        if(node !=  null) {
+            List<Integer> list = levelMap.getOrDefault(level, new ArrayList<>());
+            list.add(node.val);
+            levelMap.put(level, list);
+            if(level % 2 ==0) {
+                if (node.left != null) createLevelMap(node.left, level + 1);
+                if (node.right != null) createLevelMap(node.right, level + 1);
+            } else {
+                if (node.right != null) createLevelMap(node.right, level + 1);
+                if (node.left != null) createLevelMap(node.left, level + 1);
+            }
+
+        }
     }
 
     public int maxSubArrayDP(int[] nums) {
