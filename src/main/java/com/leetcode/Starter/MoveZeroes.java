@@ -1,10 +1,6 @@
-package com.leetcode.ArrayProblems;
+package com.leetcode.Starter;
 
 
-import io.swagger.models.auth.In;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;

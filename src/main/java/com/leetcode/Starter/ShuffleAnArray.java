@@ -1,4 +1,4 @@
-package com.leetcode.ArrayProblems;
+package com.leetcode.Starter;
 
 
 import java.util.Random;

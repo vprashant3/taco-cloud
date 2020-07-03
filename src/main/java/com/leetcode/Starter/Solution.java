@@ -1,7 +1,5 @@
-package com.leetcode.ListProblems;
+package com.leetcode.Starter;
 
-
-import java.util.Arrays;
 
 class Solution {
 
