@@ -50,6 +50,7 @@ public class NextGreaterElement {
         } else if( mid+i < right && t[mid+1] < i) {
             return searchInBitonicArray(t,i, left, mid-1);
         }
+        return false;
     }
 
 
