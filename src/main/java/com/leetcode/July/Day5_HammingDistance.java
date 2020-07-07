@@ -1,5 +1,7 @@
 package com.leetcode.July;
 
+import java.util.Arrays;
+
 public class Day5_HammingDistance {
 
     public static void main(String[] args) {
@@ -11,6 +13,15 @@ public class Day5_HammingDistance {
     public int hammingDistance(int x, int y) {
         int z = x ^ y;
         return Integer.bitCount(z);
+
+    }
+
+    public int missingNumber(int[] nums) {
+       int len = nums.length;
+       int sum =  (len * (len + 1)) / 2;
+       int actualSum = Arrays.stream(nums).sum();
+       return sum - actualSum;
+
 
     }
 
