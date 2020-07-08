@@ -1,6 +1,6 @@
 package com.leetcode.July;
 
-public class Day6_IslandPerimeter {
+public class Day7_IslandPerimeter {
 
 
     // first brute force solution
