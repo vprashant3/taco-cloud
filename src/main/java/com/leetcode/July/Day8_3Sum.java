@@ -16,8 +16,24 @@ public class Day8_3Sum {
 
     }
 
-    // sort array, then use two pointer to find sum
+
     private List<List<Integer>> threeSum(int[] ints) {
+        List<List<Integer>> res = new ArrayList<>();
+        for (int i = 0; i < ints.length; i++) {
+            int x = ints[i];  // -1
+            Map<Integer, Integer> map =  new HashMap<>();
+            for(int j = i + 1; j < ints.length; j++) {
+                int y = ints[j]; // 0 , 1
+                int key =  -y - x; //+1 , 0
+                if(!map.containsKey(key)) map.put(key, y);
+                else res.add(Arrays.asList(x, y, key));
+            }
+        }
+        return res;
+    }
+
+    // sort array, then use two pointer to find sum
+    private List<List<Integer>> threeSumTwoPointer(int[] ints) {
         Set<List<Integer>> set = new HashSet<>();
         Arrays.sort(ints);
         for (int i = 0; i < ints.length -2; i++) {
