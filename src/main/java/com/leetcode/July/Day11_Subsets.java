@@ -1,7 +1,9 @@
 package com.leetcode.July;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,8 +14,26 @@ public class Day11_Subsets {
 
     }
 
-    //iteratively
+    //cascading
     public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> output  = new ArrayList<>();
+        output.add(new ArrayList<>());
+
+        for(int num :  nums) {
+             List<List<Integer>> subset =  new ArrayList<>();
+             for(List<Integer> cur : output) {
+                 subset.add(new ArrayList<Integer>(cur){{add(num);}});
+             }
+             for(List<Integer> cur : subset) {
+                 output.add(cur);
+             }
+        }
+        return output;
+    }
+
+
+    //bitmasking
+    public List<List<Integer>> subsetsBitMasking(int[] nums) {
         List<List<Integer>> powerSet = new ArrayList<>();
         int powerSetElementCount  = (int) Math.pow(2, nums.length);
         for (int i = 0; i < powerSetElementCount ; i++) {
