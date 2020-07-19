@@ -1,6 +1,8 @@
 package com.CoreJava.DesignPatterns.Singleton;
 
-public class LazyInitialization {
+import java.io.Serializable;
+
+public class LazyInitialization implements Serializable, Cloneable {
     private static  LazyInitialization instance;
 
     private LazyInitialization() {}
@@ -18,5 +20,7 @@ public class LazyInitialization {
     }
 
 
-    
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
