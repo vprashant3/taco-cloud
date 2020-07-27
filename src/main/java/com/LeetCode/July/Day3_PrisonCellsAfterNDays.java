@@ -1,7 +1,9 @@
 package com.LeetCode.July;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class Day3_PrisonCellsAfterNDays {
@@ -11,6 +13,7 @@ public class Day3_PrisonCellsAfterNDays {
        int N = 1000000000;
        int[] res = prisonAfterNDays(cells, N);
         Arrays.stream(res).forEach(System.out::print);
+        Map<String, String> map = new HashMap<>();
     }
 
 
