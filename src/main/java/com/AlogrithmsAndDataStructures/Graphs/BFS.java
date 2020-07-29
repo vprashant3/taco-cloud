@@ -13,20 +13,21 @@ public class BFS {
         int[][] edgeList =  GetGraphUtil.getEdgeListGraph1();
         int numOfNodes = GetGraphUtil.getNodeCountGraph1();
         boolean[] isNodeVisited =  new boolean[numOfNodes+1];
-        int[] path  =  new int[numOfNodes+1];
+        int[] path  =  new int[numOfNodes];
+        Arrays.fill(path, -1);
 
         Map<Integer, List<Integer>> adjacencyList = GetGraphUtil.convertEdgeListToAdjacencyList(edgeList, false);
-        Integer startingNode = 5;
+        Integer startingNode = 0;
         bfsTraversalGraphs(adjacencyList, isNodeVisited,startingNode,path);
         //Arrays.stream(path).forEach(System.out::println);
-        getShortestPath(5,4, path);
+        getShortestPath(0,7, path);
 
 
     }
 
     private static void getShortestPath(int start, int end, int[] path) {
         int cur = end;
-        while(!(path[cur] == 0)) {
+        while(!(path[cur] == -1)) {
             System.out.println(cur);
             cur =  path[cur];
             if(cur == start) {
@@ -46,7 +47,7 @@ public class BFS {
                 List<Integer> neighbours =  adjacencyList.get(curNode);
                 for(Integer neighbour : neighbours) {
                     if(!isNodeVisited[neighbour]) {
-                        if(path[neighbour] == 0) path[neighbour] = curNode;
+                        if(path[neighbour] == -1) path[neighbour] = curNode;
                         queue.add(neighbour);
                     }
                 }

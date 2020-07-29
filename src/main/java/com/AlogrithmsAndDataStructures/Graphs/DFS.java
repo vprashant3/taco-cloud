@@ -23,9 +23,9 @@ public class DFS {
         }
     }
     private static void dfs(Integer node, boolean[] isNodeVisited, Map<Integer, List<Integer>> adjacencyList) {
-        if(isNodeVisited[node-1]) return;
+        if(isNodeVisited[node]) return;
         System.out.println("at Node : "+node);
-        isNodeVisited[node-1] = true;
+        isNodeVisited[node] = true;
         List<Integer> list = adjacencyList.get(node) != null ? adjacencyList.get(node) : new LinkedList<>();
         for (Integer neighbour : list) {
             dfs(neighbour, isNodeVisited, adjacencyList);

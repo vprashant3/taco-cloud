@@ -1,11 +1,6 @@
 package com.AlogrithmsAndDataStructures.Datastructures;
 
-import org.omg.CORBA.Object;
-import org.springframework.stereotype.Component;
 
-
-
-@Component
 public class  DynamicArray<T> implements Iterable<T> {
     private T[] arr;
     private int len = 0; // length user thinks array is
