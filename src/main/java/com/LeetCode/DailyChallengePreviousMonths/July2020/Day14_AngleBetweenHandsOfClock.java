@@ -1,4 +1,4 @@
-package com.LeetCode.July;
+package com.LeetCode.DailyChallengePreviousMonths.July2020;
 
 class Day14_AngleBetweenHandsOfAClock {
 

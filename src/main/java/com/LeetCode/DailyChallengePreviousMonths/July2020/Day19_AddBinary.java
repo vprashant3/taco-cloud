@@ -1,4 +1,4 @@
-package com.LeetCode.July;
+package com.LeetCode.DailyChallengePreviousMonths.July2020;
 
 public class Day19_AddBinary {
     public static void main(String[] args) {

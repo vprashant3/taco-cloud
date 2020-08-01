@@ -1,4 +1,4 @@
-package com.LeetCode.July;
+package com.LeetCode.DailyChallengePreviousMonths.July2020;
 
 public class Day7_IslandPerimeter {
 
