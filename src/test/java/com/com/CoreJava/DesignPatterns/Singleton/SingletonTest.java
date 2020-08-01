@@ -47,6 +47,7 @@ public class SingletonTest {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("/tmp/lz1.ser"));
         LazyInitialization lzDeSer = (LazyInitialization) ois.readObject();
         ois.close();
+        //our singleton has read resolve to avoid breaking through
         Assertions.assertNotSame(lz1, lzDeSer);
     }
 

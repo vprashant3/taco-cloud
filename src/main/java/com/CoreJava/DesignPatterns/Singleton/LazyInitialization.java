@@ -19,6 +19,10 @@ public class LazyInitialization implements Serializable, Cloneable {
         return instance;
     }
 
+    protected Object readResolve() {
+        return instance;
+    }
+
 
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
