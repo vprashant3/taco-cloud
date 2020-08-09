@@ -1,25 +1,42 @@
 package com.leetcode.Learning;
 
+import com.leetcode.HelperClasses.TreeNode;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class Test {
 
     public static void main(String[] args) {
-        String s = "aaaaaaa";
-        List<String> wordDict = new ArrayList<>();
-        wordDict.add("aaaa");
-        wordDict.add("aaa");
-        System.out.println(wordBreak(s, wordDict));
-
+        int[] arr = {1,2,3,4};
+        int k = 2;
+        System.out.println(new Test().findKthPositive(arr, k));
     }
 
-    public static boolean wordBreak(String s, List<String> wordDict) {
-        if(s == null || s.length() == 0 || wordDict == null  || wordDict.size() ==0 ) return false;
-
-
-
-        return false;
+    public int findKthPositive(int[] arr, int k) {
+        int curNum = 1;
+        int curMissingCount = 0;
+        for(int i = 0; i < arr.length; i++) {
+            while (curNum < arr[i]) {
+                curNum++;
+                curMissingCount++;
+                if(curMissingCount == k) return --curNum;
+            }
+            curNum++;
+        }
+        while(curMissingCount <= k) {
+            curNum++;
+            curMissingCount++;
+            if(curMissingCount == k) return --curNum;
+        }
+        return 0;
     }
+
+
+
+
 
 }
