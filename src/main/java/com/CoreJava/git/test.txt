@@ -1,1 +1,3 @@
 git branch 1 changes
+
+next change on branch 2
