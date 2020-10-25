@@ -1,4 +1,4 @@
-package com.leetcode.august;
+package com.leetcode.DailyChallengePreviousMonths.august;
 
 public class Day1_DetectCapital {
 

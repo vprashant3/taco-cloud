@@ -1,11 +1,8 @@
-package com.leetcode.august;
+package com.leetcode.DailyChallengePreviousMonths.august;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
-import java.util.Set;
 
 public class Day9_RottingOranges {
 

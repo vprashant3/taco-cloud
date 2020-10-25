@@ -14,7 +14,7 @@ public class TreeNode {
         this.right = right;
     }
 
-    public public static void main(String[] args) {
+    public static void main(String[] args) {
         TreeNode right4 = new TreeNode(1, null , null);
         TreeNode right3 = new TreeNode(2, null, null);
         TreeNode left3 = new TreeNode(3, null, null);
