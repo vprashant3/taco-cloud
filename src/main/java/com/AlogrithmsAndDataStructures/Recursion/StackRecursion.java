@@ -1,5 +1,7 @@
 package com.AlogrithmsAndDataStructures.Recursion;
 
+import io.swagger.models.auth.In;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -8,15 +10,27 @@ public class StackRecursion {
 
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<>();
+        stack.push(1);
         stack.push(2);
-        stack.push(1);
         stack.push(3);
-        stack.push(10);
-        stack.push(9);
         stack.push(4);
-        stack.push(1);
-        Stack<Integer> sortedStack = sortStackUsingRecursion(stack);
-        sortedStack.forEach(System.out::println);
+        stack.push(5);
+        deleteMiddleElementUsingRecursion(stack,(stack.size()/2 + 1));
+        stack.forEach(System.out::println);
+
+
+    }
+
+    private static Stack<Integer> deleteMiddleElementUsingRecursion(Stack<Integer> stack, int mid) {
+        if(stack.size() == mid) {
+            stack.pop();
+            return stack;
+        } else {
+            int top = stack.pop();
+            deleteMiddleElementUsingRecursion(stack, mid);
+            stack.push(top);
+        }
+        return stack;
     }
 
     private static Stack<Integer> sortStackUsingRecursion(Stack<Integer> stack) {
