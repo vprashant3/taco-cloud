@@ -15,14 +15,35 @@ public class StackRecursion {
         stack.push(3);
         stack.push(4);
         stack.push(5);
-        deleteMiddleElementUsingRecursion(stack,(stack.size()/2 + 1));
+       reverseStack(stack);
         stack.forEach(System.out::println);
 
 
     }
 
+    private static Stack<Integer> reverseStack(Stack<Integer> stack) {
+        if(stack.isEmpty()) return stack;
+        else {
+            int top =  stack.pop();
+            reverseStack(stack);
+            insertIntoStack(stack, top);
+        }
+        return stack;
+    }
+
+    private static void insertIntoStack(Stack<Integer> stack, int top) {
+        if(stack.isEmpty()) stack.push(top);
+        else {
+            int cur = stack.pop();
+            insertIntoStack(stack, top);
+            stack.push(cur);
+        }
+    }
+
     private static Stack<Integer> deleteMiddleElementUsingRecursion(Stack<Integer> stack, int mid) {
-        if(stack.size() == mid) {
+        if(stack.isEmpty()) {
+            return stack;
+        } else if(stack.size() == mid) {
             stack.pop();
             return stack;
         } else {
