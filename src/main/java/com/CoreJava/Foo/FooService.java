@@ -1,4 +1,4 @@
-package com.Foo;
+package com.CoreJava.Foo;
 
 import org.springframework.stereotype.Component;
 

@@ -15,7 +15,7 @@ public class StackRecursion {
         stack.push(3);
         stack.push(4);
         stack.push(5);
-       reverseStack(stack);
+        reverseStack(stack);
         stack.forEach(System.out::println);
 
 
