@@ -14,10 +14,14 @@ public class Day3_ConsecutiveCharacters {
         for(int i = 1; i  < charArray.length; i++) {
             if(charArray[i] == charArray[i - 1]) curLength++;
             else {
-                maxLength = Math.max(maxLength, curLength);
                 curLength = 1;
             }
+            maxLength = Math.max(maxLength, curLength);
+
         }
-        return Math.max(maxLength, curLength);
+        return maxLength;
     }
+
+
+
 }
