@@ -1,7 +1,6 @@
 package com.AlogrithmsAndDataStructures.Recursion;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -11,23 +10,19 @@ public class StringSubset {
     public static void main(String[] args) {
         List<String> res =  new ArrayList<>();
         res.add("");
-        new StringSubset().generateSubsetWithRecursion("abc", res);
+        new StringSubset().generateSubsetWithRecursion("abcd" , res);
         res.forEach(System.out::println);
     }
 
     private void generateSubsetWithRecursion(String input, List<String> res) {
+        if(input == null || input.length() == 0) return;
         String firstChar = input.substring(0,1);
         List<String> temp = new ArrayList<>();
         for(String s : res) {
             temp.add(s.concat(firstChar));
         }
         res.addAll(temp);
-        if(input.length() == 1) {
-            return;
-        } else {
-            generateSubsetWithRecursion(input.substring(1), res);
-        }
-
+        generateSubsetWithRecursion(input.substring(1), res);
     }
 
     private String[] generateSubsetWithoutRecursion(String input) {
