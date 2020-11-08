@@ -1,18 +1,33 @@
 package com.AlogrithmsAndDataStructures.Recursion;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 public class StringSubset {
     public static void main(String[] args) {
-        String[] subSetArr = new StringSubset().generateSubsetWithRecursion("abc");
-        Arrays.stream(subSetArr).forEach(System.out::println);
+        List<String> res =  new ArrayList<>();
+        res.add("");
+        new StringSubset().generateSubsetWithRecursion("abc", res);
+        res.forEach(System.out::println);
     }
 
-    private String[] generateSubsetWithRecursion(String abc) {
-        return null;
+    private void generateSubsetWithRecursion(String input, List<String> res) {
+        String firstChar = input.substring(0,1);
+        List<String> temp = new ArrayList<>();
+        for(String s : res) {
+            temp.add(s.concat(firstChar));
+        }
+        res.addAll(temp);
+        if(input.length() == 1) {
+            return;
+        } else {
+            generateSubsetWithRecursion(input.substring(1), res);
+        }
+
     }
 
     private String[] generateSubsetWithoutRecursion(String input) {
