@@ -7,15 +7,8 @@ import java.util.Set;
 public class StringSubset {
     public static void main(String[] args) {
         Set<String> res =  new HashSet<>();
-        new StringSubset().permutationWithSpaces("abc" ,0, res);
+        new StringSubset().generateSubsetWithRecursion("abc", res);
         res.forEach(System.out::println);
-    }
-
-    private void permutationWithSpaces(String input, int pos, Set<String> res) {
-        if(pos == input.length()) return;
-        String s1 = input.substring(0,pos).concat(" ").concat(input.substring(pos)).trim();
-        res.add(s1);
-        permutationWithSpaces(input, pos + 1, res);
     }
 
     private void generateSubsetWithRecursion(String input, Set<String> res) {
