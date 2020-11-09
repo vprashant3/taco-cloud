@@ -1,23 +1,27 @@
 package com.AlogrithmsAndDataStructures.Recursion;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 
 public class StringSubset {
     public static void main(String[] args) {
-        List<String> res =  new ArrayList<>();
-        res.add("");
-        new StringSubset().generateSubsetWithRecursion("abcd" , res);
+        Set<String> res =  new HashSet<>();
+        new StringSubset().permutationWithSpaces("abc" ,0, res);
         res.forEach(System.out::println);
     }
 
-    private void generateSubsetWithRecursion(String input, List<String> res) {
+    private void permutationWithSpaces(String input, int pos, Set<String> res) {
+        if(pos == input.length()) return;
+        String s1 = input.substring(0,pos).concat(" ").concat(input.substring(pos)).trim();
+        res.add(s1);
+        permutationWithSpaces(input, pos + 1, res);
+    }
+
+    private void generateSubsetWithRecursion(String input, Set<String> res) {
         if(input == null || input.length() == 0) return;
         String firstChar = input.substring(0,1);
-        List<String> temp = new ArrayList<>();
+        Set<String> temp = new HashSet<>();
         for(String s : res) {
             temp.add(s.concat(firstChar));
         }
