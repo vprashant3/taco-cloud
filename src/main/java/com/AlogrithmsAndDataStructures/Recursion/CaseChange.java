@@ -3,11 +3,11 @@ package com.AlogrithmsAndDataStructures.Recursion;
 public class CaseChange {
 
     public static void main(String[] args) {
-        generateAllCaseChange("ab", "");
+        generateAllCaseChange("a1b2", "");
     }
 
     private static void generateAllCaseChange(String input, String output) {
-        if(input.length() == 0) {
+        if (input.length() == 0) {
             System.out.println(output);
             return;
         }
@@ -15,10 +15,9 @@ public class CaseChange {
         String newInput = input.substring(1);
         String output1 = output.concat(firstChar);
         generateAllCaseChange(newInput, output1);
-        String output2 =  output.concat(firstChar.toUpperCase());
+        String output2 = output.concat(firstChar.toUpperCase());
         generateAllCaseChange(newInput, output2);
 
     }
-
 
 }
