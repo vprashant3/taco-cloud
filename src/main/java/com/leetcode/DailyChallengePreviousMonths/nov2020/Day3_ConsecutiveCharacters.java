@@ -1,4 +1,4 @@
-package com.leetcode.nov2020;
+package com.leetcode.DailyChallengePreviousMonths.nov2020;
 
 public class Day3_ConsecutiveCharacters {
 

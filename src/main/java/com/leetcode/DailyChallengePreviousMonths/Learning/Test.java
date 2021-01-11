@@ -1,4 +1,4 @@
-package com.leetcode.Learning;
+package com.leetcode.DailyChallengePreviousMonths.Learning;
 
 import com.leetcode.HelperClasses.ListNode;
 

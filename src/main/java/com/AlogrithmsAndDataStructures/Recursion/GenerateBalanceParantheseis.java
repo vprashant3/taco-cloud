@@ -8,10 +8,10 @@ import java.util.Set;
 public class GenerateBalanceParantheseis {
 
     public static void main(String[] args) {
-      int[] input =  {0,1,0,2,0,1,2,0};
-        int[] ints = new GenerateBalanceParantheseis().sortArray(input);
-
-        Arrays.stream(ints).forEach(System.out::println);
+//      int[] input =  {0,1,0,2,0,1,2,0};
+//        int[] ints = new GenerateBalanceParantheseis().sortArray(input);
+//
+//        Arrays.stream(ints).forEach(System.out::println);
 
     }
 
@@ -34,17 +34,17 @@ public class GenerateBalanceParantheseis {
 
 
 
-    // key idea here is sort the arrays then swap adjacent elements to get wave form
-    // time complexity would would O(nlogn) and space complexity is connstant as no additional memory is used.
-    int[] sortArray(int[] input){
-        // sorting is nlogn
-        Arrays.sort(input);
-        for(int i = 0; i < input.length - 1; i = i + 2) {
-            int temp = input[i];
-            input[i] = input[i+1];
-            input[i + 1] = temp;
-        }
-        return a;
-    }
+//    // key idea here is sort the arrays then swap adjacent elements to get wave form
+//    // time complexity would would O(nlogn) and space complexity is connstant as no additional memory is used.
+//    int[] sortArray(int[] input){
+//        // sorting is nlogn
+//        Arrays.sort(input);
+//        for(int i = 0; i < input.length - 1; i = i + 2) {
+//            int temp = input[i];
+//            input[i] = input[i+1];
+//            input[i + 1] = temp;
+//        }
+//        return a;
+//    }
 
 }

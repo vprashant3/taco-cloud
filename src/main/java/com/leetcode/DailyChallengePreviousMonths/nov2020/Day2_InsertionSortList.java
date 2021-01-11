@@ -1,8 +1,6 @@
-package com.leetcode.nov2020;
+package com.leetcode.DailyChallengePreviousMonths.nov2020;
 
 import com.leetcode.HelperClasses.ListNode;
-
-import java.util.List;
 
 public class Day2_InsertionSortList {
 
