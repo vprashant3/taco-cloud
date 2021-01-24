@@ -1,4 +1,4 @@
-package com.AlogrithmsAndDataStructures.DynamicProgramming;
+package com.AlogrithmsAndDataStructures.DynamicProgramming.Easy;
 
 public class MinCostClimbingStairs {
     private static int[] dp;
