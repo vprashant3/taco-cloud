@@ -1,8 +1,6 @@
-package com.leetcode.jan2021;
+package com.leetcode.DailyChallengePreviousMonths.jan2021;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Day17_CountSortedVowelStrings {
 

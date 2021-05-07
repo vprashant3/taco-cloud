@@ -1,4 +1,4 @@
-package com.leetcode.jan2021;
+package com.leetcode.DailyChallengePreviousMonths.jan2021;
 
 import java.util.Stack;
 

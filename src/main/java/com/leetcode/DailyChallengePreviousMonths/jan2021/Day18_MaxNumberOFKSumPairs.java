@@ -1,8 +1,6 @@
-package com.leetcode.jan2021;
+package com.leetcode.DailyChallengePreviousMonths.jan2021;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 
 public class Day18_MaxNumberOFKSumPairs {
 
