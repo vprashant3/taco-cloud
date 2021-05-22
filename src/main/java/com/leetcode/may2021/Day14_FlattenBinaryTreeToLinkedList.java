@@ -2,9 +2,7 @@ package com.leetcode.may2021;
 
 import com.leetcode.HelperClasses.TreeNode;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class Day14_FlattenBinaryTreeToLinkedList {
 
@@ -17,18 +15,18 @@ public class Day14_FlattenBinaryTreeToLinkedList {
 
     public void flatten(TreeNode root) {
         if(root == null) return;
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        while(!stack.isEmpty()) {
-            TreeNode current = stack.pop();
-            if(current.right != null) {
-                stack.push(current.right);
+        Deque<TreeNode> deque = new ArrayDeque<>();
+        deque.push(root);
+        while(!deque.isEmpty()) {
+            TreeNode curNode = deque.pop();
+            if(curNode.right != null) {
+                deque.push(curNode.right);
             }
-            if(current.left != null) {
-                stack.push(current.left);
+            if(curNode.left != null) {
+                deque.push(curNode.left);
             }
-            if(!stack.isEmpty()) current.right = stack.peek();
-            current.left = null;
+            if(!deque.isEmpty()) curNode.right = deque.peek();
+            curNode.left = null;
         }
 
 
