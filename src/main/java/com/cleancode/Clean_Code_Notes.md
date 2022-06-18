@@ -10,6 +10,9 @@
     - Avoid mental mappig between already knownn vairable names
     - Class names should be nouns or noun phrase names
     - Method names should be verb or verb phrase names
-    - Pick one word per concept, ie, of fetch, retrieve and get use one thorugh the code
-    - 
+    - Pick one word per concept, ie, of fetch, retrieve and get use one through the code
+    - Don't add unncessary context
+
+## Functions
+
     
