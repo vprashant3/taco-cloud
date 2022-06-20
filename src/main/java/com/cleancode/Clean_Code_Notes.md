@@ -14,5 +14,9 @@
     - Don't add unncessary context
 
 ## Functions
-
+    - A function should be small with descriptive name
+    - Function should do one thing and do it well
+    - One level of abstraction per function
+    - Keep number of function arguments to a minimum, preferably less than 3
+   
     
