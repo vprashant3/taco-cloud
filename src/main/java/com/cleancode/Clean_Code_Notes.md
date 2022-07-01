@@ -25,6 +25,5 @@
     - extract try/catch block
     - have separate dedicated functions for error handling
     - don't repeat yourself
-    - 
    
     
