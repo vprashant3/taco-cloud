@@ -18,5 +18,13 @@
     - Function should do one thing and do it well
     - One level of abstraction per function
     - Keep number of function arguments to a minimum, preferably less than 3
+    - A single input function which takes an event and alters its state with no output, is also fine
+    - function should have no side effects
+    - there should be separate functions for command(write) and query(read)
+    - prefer exceptions to returning error codes, as returned error codes need to be handled immediately in the happy path
+    - extract try/catch block
+    - have separate dedicated functions for error handling
+    - don't repeat yourself
+    - 
    
     
