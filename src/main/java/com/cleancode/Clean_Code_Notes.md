@@ -29,6 +29,9 @@
 ### Comments
     - Don't
     - Unless absoloutely necessary
+    - TODO's are fine
+    - Don't use a comment when you can use a function or variable
+    - If a line of code can be commented, it doesn't need to be in the codebase and should be removed.
     
    
     
