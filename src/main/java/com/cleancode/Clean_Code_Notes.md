@@ -41,4 +41,12 @@
     - Data structures and objects are opposites.
     - The law of demeter says functions should not not know innards of objects it manipulates.
 
+### Error Handling
+    - Use exceptions rather than return codes
+    - Try to write tests that force exceptions and then handle them
+    - Use unchecked exceptions as with checked exceptions all the callers have to be modified and break open/close principle.
+    - Provide context with exceptions
+    - Define exceptions in terms of caller's needs
+    - Don't return nulls or pass nulls, either throw exceptions or pass speical case objects
+    
     
