@@ -33,5 +33,12 @@
     - Don't use a comment when you can use a function or variable
     - If a line of code can be commented, it doesn't need to be in the codebase and should be removed.
     
-   
+
+### Objects and Data Structures
+    - Hide the data and code to an interface with defined access methods.
+    - Data Structures hold data and have no functions. 
+    - Objects hide data and have functions
+    - Data structures and objects are opposites.
+    - The law of demeter says functions should not not know innards of objects it manipulates.
+
     
