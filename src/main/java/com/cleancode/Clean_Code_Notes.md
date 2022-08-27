@@ -49,4 +49,26 @@
     - Define exceptions in terms of caller's needs
     - Don't return nulls or pass nulls, either throw exceptions or pass speical case objects
     
+### Boundaries
+    - Write test cases to learn about 3rd party APIs and to emsure release dosen't break anything.
     
+### Unit Tests
+    - Three laws of TDD
+        - You may not write production code until you have written a failing unit test.
+        - You may not write more of a unit test than is sufficient to fail, and not compiling is failing.
+        - You may not write more production code than is sufficient to pass the currently failing test. 
+    - Test code is as important as prodution code
+    - Follow Build-Operate-Check pattern in test cases.
+        - The first part builds up the test data.
+        - The second part operates on that test data.
+        - The third part checks that the operation yielded the expected results.
+    - Tests have different standards that production code, they should be easy to read, but memory and cpu efficiency are not not top priorites.
+    - Single concpet per test
+    - Clean tests follow the F.I.R.S.T actronym
+        - Fast - shouldn't take long to run
+        - Independent - one test shouldn't be dependendent on another
+        - Repeatable - should be able to run in prod, qa or local env 
+        - Self-validating - test should return a pass or fail, and no manual review is needed to understand the result 
+        - Timely - tests should be written before production code.
+    - If the tests rot, the code will rot too. Keep the tests updated.
+

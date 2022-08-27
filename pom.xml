@@ -39,6 +39,11 @@
             <optional>true</optional>
         </dependency>
         <dependency>
+            <groupId>com.expedia.www.insurance.contracts</groupId>
+            <artifactId>global-insurance-shopping-service-contracts</artifactId>
+            <version>0.1.163</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
