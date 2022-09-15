@@ -2,7 +2,7 @@
 
 ## Meaningful Names
     - Use intention revealing names 
-    - Avoid disinformation while naming a vriable
+    - Avoid disinformation while naming a variable
     - Make meaningful distinctions between variable names to avoid confusion
     - Use pronouncable names so that they can be easily read and talked about
     - Use searchable names to quickly find places of usage and intent
@@ -50,7 +50,7 @@
     - Don't return nulls or pass nulls, either throw exceptions or pass speical case objects
     
 ### Boundaries
-    - Write test cases to learn about 3rd party APIs and to emsure release dosen't break anything.
+    - Write test cases to learn about 3rd party APIs and to ensure release dosen't break anything.
     
 ### Unit Tests
     - Three laws of TDD
@@ -72,3 +72,14 @@
         - Timely - tests should be written before production code.
     - If the tests rot, the code will rot too. Keep the tests updated.
 
+### Classes
+    - Class Organization
+        - public static constants
+        - private satic variables
+        - private variables
+        - public methods
+        - private utilites
+    - Keep things encapsulated
+    - Classes shold be small
+    - Classes should have one responsibility and one reason to change
+    - 
