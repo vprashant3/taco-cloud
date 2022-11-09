@@ -9,5 +9,7 @@
     - DB can be used to tie all the requests and maintain history.
     - Choose the simplest architecture that meets your requirements, no simpler than that.
 
-### 
+### Failover Strategies
+    - Failover Servers : cold standby
+    - 
     

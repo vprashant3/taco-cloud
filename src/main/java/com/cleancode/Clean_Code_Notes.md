@@ -82,4 +82,5 @@
     - Keep things encapsulated
     - Classes shold be small
     - Classes should have one responsibility and one reason to change
-    - 
+
+
