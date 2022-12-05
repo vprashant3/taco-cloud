@@ -1,4 +1,4 @@
-package com.educative.io.slidingWindow;
+package com.codingroundpatterns.slidingWindow;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

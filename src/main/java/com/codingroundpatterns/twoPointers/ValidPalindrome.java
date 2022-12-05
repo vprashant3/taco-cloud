@@ -1,4 +1,4 @@
-package com.educative.io.twoPointers;
+package com.codingroundpatterns.twoPointers;
 
 public class ValidPalindrome {
     public static boolean isPalindrome(String s) {
