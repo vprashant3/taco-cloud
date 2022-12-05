@@ -83,4 +83,6 @@
     - Classes shold be small
     - Classes should have one responsibility and one reason to change
 
-
+### Systems
+    - Separate constructing a system from using it
+    - 
