@@ -88,3 +88,9 @@
     - Systems need domain-specific languages
     - Use the simplest thing that can possibly work
 
+### Emergence
+    - Simple Design Rules
+        - Have tests with complete coverage
+        - Keep refactoring
+        - Code should be expressive
+        - Minimal classes and Methods
