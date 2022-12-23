@@ -85,4 +85,6 @@
 
 ### Systems
     - Separate constructing a system from using it
-    - 
+    - Systems need domain-specific languages
+    - Use the simplest thing that can possibly work
+
