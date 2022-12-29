@@ -1,5 +1,7 @@
 package com.codingroundpatterns.fastandslowpointers;
 
+import com.codingroundpatterns.LinkedListNode;
+
 public class MiddleOfTheLinkedList {
 
     public static LinkedListNode middleNode(LinkedListNode head) {

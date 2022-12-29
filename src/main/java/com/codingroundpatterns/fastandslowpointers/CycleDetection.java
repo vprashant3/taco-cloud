@@ -1,5 +1,7 @@
 package com.codingroundpatterns.fastandslowpointers;
 
+import com.codingroundpatterns.LinkedListNode;
+
 public class CycleDetection{
     public static boolean detectCycle(LinkedListNode head) {
         // Write your code here

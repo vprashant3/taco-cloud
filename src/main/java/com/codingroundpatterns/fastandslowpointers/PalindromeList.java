@@ -1,5 +1,7 @@
 package com.codingroundpatterns.fastandslowpointers;
 
+import com.codingroundpatterns.LinkedListNode;
+
 public class PalindromeList{
     public static boolean palindrome(LinkedListNode head) {
         LinkedListNode mid = findMid(head);

@@ -1,6 +1,6 @@
-package com.codingroundpatterns.fastandslowpointers;
+package com.codingroundpatterns;
 
-class LinkedListNode {
+public class LinkedListNode {
     public int data;
     public LinkedListNode next;
 
