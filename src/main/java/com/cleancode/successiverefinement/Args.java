@@ -183,7 +183,6 @@ public class Args {
     }
 
     private void parseBooleanSchemaElement(char elementId) {
-        booleanArgs.put(elementId, false);
     }
 
     private class ArgsException extends Exception {
